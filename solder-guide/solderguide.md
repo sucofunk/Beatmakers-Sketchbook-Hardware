@@ -6,9 +6,6 @@ Soldering all the components to the PCB and bringing *Beatmaker's Sketchbook* to
 Please read the complete instructions guide and follow the instructions step by step in the described order. <br>
 Some tasks may seem tedious, but in the end it will be satisfying and worth the work. ;)
 
-If you are a complete beginner in soldering, you should learn the basics. There are plenty of videos on Youtube. A good recommendation is [this video](https://www.youtube.com/watch?v=QKbJxytERvg) from Collin's Lab.
-In case you mess something up, you should be familiar with desoldering, too. Another recommendation is [this video](https://www.youtube.com/watch?v=N_dvf45hN6Y) from Collin's Lab.
-
 ## 1. Preparation
 
 To get started with soldering, you will need some preparation. First, get all the tools you need, then clean the big PCB for soldering.
@@ -24,6 +21,21 @@ To get started with soldering, you will need some preparation. First, get all th
 * Lighter
 * Alcohol to clean the PCB (do not use the lighter with the above mentioned alcohol) ;)
 * In case you mess something up, a desoldering pump might be helpful
+* A "third hand" might be helpful at some points, but s not needed. Check out [Omnifixo](https://omnifixo.com/) - it's perfect!
+
+### Bring your skills up to date, if needed
+
+If you are a complete beginner in soldering, you should learn the basics. There are plenty of videos on Youtube. A good recommendation is [this video](https://www.youtube.com/watch?v=QKbJxytERvg) from Collin's Lab.
+
+In case you mess something up, you should be familiar with desoldering, too. Another recommendation is [this video](https://www.youtube.com/watch?v=N_dvf45hN6Y) from Collin's Lab.
+
+If you need information on how to use a multimeter, reading [this article](https://learn.sparkfun.com/tutorials/how-to-use-a-multimeter/all) is a good starting point.
+
+### This is what the result will look like
+
+ToDo:
+- zwei Bilder der Platine ohne Komponenten
+- zwei Bilder komplett bestückt
 
 ### Remove Tabs from PCB
 
@@ -200,11 +212,13 @@ When done, shorten the two power button pins with a jumper. If you bought a comp
 
 ## 15. Encoders
 
-![Encoder](images/encoder.png)
-
+Now it is time to mount the four rotary encoders. If the PCB does not have mounting holes for the encoders "mounting clamp-pins", just cut them off with a wire cutter as shown in the pictures.
 
 ![Encoder](images/encoderCut.png)
 
+Than mount the encoders and solder them to the PCB. Repeat this step for all four encoders.
+
+![Encoder](images/encoder.png)
 
 
 ## 16. Mount ICs
@@ -213,7 +227,19 @@ Remember what they are used for?
 
 ## 17. Install Teensy
 
-Cut Ground Pads (link!)
+### Preparing the teensy for battery power
+If you are not using the power management board and do not power your Beatmaker's sketchbook with a battery, you should skip this step.
+
+Otherwise you need to separate the two pads on the bottom side of your Teensy 4.1. The standard configuration is to use the Teensy with USB power. We will power the teensy from a battery. To not mix the GND from the USB and the battery (which will definitely harm the Teensy!), we need to decouple them by cutting the small trace with a cutter knife.
+
+![Cut pads](images/teensyPADs.png)
+
+To make sure the trace is cut, you can use your multimeter and check if there is a connection or not. You can do this by using the continuity check, which beeps on most multimeters, if there is a connection between the two probes. Place one probe on each pad. If it beeps, there is still a connection. If it does not beep, we are done with this step.
+
+### Solder PINs
+
+### Plug the SD card in
+
 
 ## 18. Mount the Audio Board
 
