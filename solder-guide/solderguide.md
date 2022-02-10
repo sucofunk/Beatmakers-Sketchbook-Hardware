@@ -81,14 +81,14 @@ All the resistors, capacitors and the diode come in a small bag. Besides the bag
 
 Now start from top to bottom and place each part at the described position on the PCB.
 
-All parts from the sheet should be mounted on the top side of the PCB.
+All parts from the sheet should be mounted on the top side of the PCB. After soldering, cut the remaining parts of the legs with a wire cutter.
 
 If a resistor lost its label, you should use a multimeter to measure its Ohm value. If you do not own a multimeter, another option might be checking the coloured rings against a resistor table. You can find one [here](https://www.digikey.com/en/resources/conversion-calculators/conversion-calculator-resistor-color-code).
 
 It is always a good idea to double check the resistors value before soldering it to the PCB.
 
 ### Resistors
-Bend the resistor wires right at the edge of the resistor. This way it will fit straight into the PCB. Resistors do not have a polarity. It does not matter which way you put them on the PCB. Just use the way you like it most - they are coloured! ;)
+Bend the resistor wires right at the edge of the resistor. This way it will fit straight into the PCB. Resistors do not have a polarity. It does not matter which way you put them on the PCB. Just place it the way you like it most - they are coloured! ;)
 
 ![Resistor](images/resistor.png)
 
@@ -173,20 +173,39 @@ To position the LEDs right below the plexiglass cover for best visibility of the
 Place the **red** LEDs on positions **D1-D8** and the **green** ones on **D9-D32**.
 
 ## 12. MIDI Sockets
-Use tape to keep them in place
 
+Mounting the MIDI connectors might be a bit difficult as they tend not to stay in place if you flip the PCB for soldering. It might be helpful to use some tape to hold them in place for soldering.
+
+![MIDI sockets](images/midi.png)
 
 ## 13. Headphone Jack
 
-## 14. Front PINs
+This step is straight forward. Plug the headphone jack in and just solder.
 
-Bend PINs to +-45°
+![Headphone jack](images/headphone.png)
 
-### Power Switch
-Solder power switch connectors to bottom side
+## 14. Front- & Power-switch PINs
 
+Up to the next hack! Soldering the connector pins for the fader and the fader LED might be a bit fiddly.
+
+Take the angled 5 PIN connector, put it through the holes of the PCB and bend it to the +-45° angled position shown in the picture. Then hold it somehow in place - tape might help - and solder it. The PINs should not be directed to point off the board as it would not fit in the case afterwards.
+
+![Power PINs](images/frontPINs.png)
+
+Repeat the task with the angled, 2 PIN connector at the power switch position as shown in the picture.
+
+![Power PINs](images/powerPINs.png)
+
+When done, shorten the two power button pins with a jumper. If you bought a complete kit, the jumper is already attached to the pins. The jumper will be our temporary power switch. Removing the jumper will switch the device on. Putting it back on will turn it off.
 
 ## 15. Encoders
+
+![Encoder](images/encoder.png)
+
+
+![Encoder](images/encoderCut.png)
+
+
 
 ## 16. Mount ICs
 
@@ -219,3 +238,5 @@ Connect display via cable to the display pins.
 ### 4. Mount LED
 Do not mix GND and VCC,
 Isolate connectors
+
+## 24. Power Switch
