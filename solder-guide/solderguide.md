@@ -37,6 +37,7 @@ To get started with soldering, you will need some preparation. First, get all th
 * Alcohol to clean the PCB (do not use the lighter with the above mentioned alcohol) ;)
 * In case you mess something up, a *desoldering pump* might be helpful
 * A "third hand" might be helpful at some points, but is not needed. Check out [Omnifixo](https://omnifixo.com/) - it's perfect!
+* Micro USB Cable to connect the Teensy Microcontroller to your PC
 
 ### Bring your skills up to date, if needed
 
@@ -211,19 +212,7 @@ To position the LEDs right below the plexiglass cover for best visibility of the
 
 Place the **red** LEDs on positions **D1-D8** and the **green** ones on **D9-D32**.
 
-## 12. MIDI Sockets
-
-Mounting the MIDI connectors might be a bit difficult as they tend not to stay in place if you flip the PCB for soldering. It might be helpful to use some tape to hold them in place for soldering.
-
-![MIDI sockets](images/midi.png)
-
-## 13. Headphone Jack
-
-This step is straight forward. Plug the headphone jack in and just solder.
-
-![Headphone jack](images/headphone.png)
-
-## 14. Front- & Power-switch PINs
+## 12. Front- & Power-switch PINs
 
 Up to the next hack! Soldering the connector pins for the fader and the fader LED might be a bit fiddly.
 
@@ -237,35 +226,23 @@ Repeat the task with the angled, 2 PIN connector at the power switch position as
 
 When done, shorten the two power button pins with a jumper. If you bought a complete kit, the jumper is already attached to the pins. The jumper will be our temporary power switch. Removing the jumper will switch the device on. Putting it back on will turn it off.
 
-## 15. Encoders
+## 13. MIDI Sockets
 
-Now it is time to mount the four rotary encoders. If the PCB does not have mounting holes for the encoders "mounting clamp-pins", just cut them off with a wire cutter as shown in the pictures.
+Mounting the MIDI connectors might be a bit difficult as they tend not to stay in place if you flip the PCB for soldering. It might be helpful to use some tape to hold them in place for soldering.
 
-![Encoder](images/encoderCut.png)
+![MIDI sockets](images/midi.png)
 
-Then mount the encoders and solder them to the PCB. Repeat this step for all four encoders.
+## 14. Headphone Jack
 
-![Encoder](images/encoder.png)
+This step is straight forward. Plug the headphone jack in and just solder.
 
+![Headphone jack](images/headphone.png)
 
-## 16. Mount ICs
-
-<p style="color:red"> Remember what they are used for? </p>
-
-## 17. Install Teensy
+## 15. Install Teensy
 
 ### Remove the SD card
 
 If you bought a kit from sucofunk.com, the SD card is already plugged in to the Teensy. It is recommended to remove the card before soldering the PINs to prevent accidents with your soldering iron and the plastic housing of the card ;)
-
-### Preparing the teensy for battery power
-If you are not using the power management board and do not power your Beatmaker's sketchbook from a battery, you should skip this step.
-
-Otherwise you need to separate the two pads on the bottom side of your Teensy 4.1. The standard configuration is to use the Teensy with USB power. We will power the teensy from a battery. To not mix the GND from the USB and the battery (which will definitely harm the Teensy!), we need to decouple them by cutting the small trace with a cutter knife.
-
-![Cut pads](images/teensyPads.png)
-
-To make sure the trace is cut, you can use your multimeter and check if there is a connection or not. You can do this by using the continuity check, which beeps on most multimeters, if there is a connection between the two probes. Place one probe on each pad. If it beeps, there is still a connection. If it does not beep, we are done with this step.
 
 ### Adding PSRAM
 
@@ -287,17 +264,32 @@ It's time to link the brain to the system. Pick up your soldering iron again and
 
 **Pro Tip**: Start by soldering the four corner pins first. This way the Teensy is fixed correct and soldering the other pins is a bit more easy, as the plastic that is holding the pins might deform a bit.
 
-## 18. Audio Board
+## 16. Audio Board
 
 Repeat the last step with the Sucofunkey Audio Board. Pay attention to place it the right way! On one side the pins are labeled on both PCBs. Pay attention the labels on the main PCB and the audio board match - as shown in the picture.
 
 ![Audio Board](images/audioBoard.png)
 
 
+## 17. Encoders
+
+Now it is time to mount the four rotary encoders. If the PCB does not have mounting holes for the encoders "mounting clamp-pins", just cut them off with a wire cutter as shown in the pictures.
+
+![Encoder](images/encoderCut.png)
+
+Then mount the encoders and solder them to the PCB. Repeat this step for all four encoders.
+
+![Encoder](images/encoder.png)
+
+
+## 18. Mount ICs
+
+<p style="color:red"> Remember what they are used for? </p>
+
 
 ## 19. Amplifier & Speakers
 
-During the last step we connected the audio board, which outputs the audio signals from the Teensy to the analog world. But hey, it is impossible to hear anything from that audio board without speakers. Ok, you already soldered the headphone- and line-out jacks some steps ago, but that is not enough.
+During one of the the last steps we connected the audio board, which outputs the audio signals from the Teensy to the analog world. But hey, it is impossible to hear anything from that audio board without speakers. Ok, you already soldered the headphone- and line-out jacks some steps ago, but that is not enough.
 
 So we need a small amplifier and two speakers to make *Beatmaker's sketchbook* rock.
 
@@ -319,11 +311,51 @@ Tin the ends of the wire by heating by heating it up with the soldering iron up 
 
 If you soldered all four wires to the two speakers, connect the ends of the wires to the amplifier. You need a small screwdriver for this task. Connect the **black wire of the left speaker** to **LOUT-** and the red wire of the left speaker to the connection right beside the black wire. Repeat this step for the right speaker by connecting the **black wire of the right speaker** to **ROUT-** and as you already guessed, connect the red wire to the position right beside the black wire. ;)  
 
-## 20. Power Supply
+Well done! We are done with soldering for now and ready to power the system up and check if your Beatmaker's Sketchbook is working.
 
-Yeah! We reached the last step before powering up the system for the first time.
 
-To give power to *Beatmaker's sketchbook*, we need to connect the battery charger module. It is a Power Boost 500 module from Adafruit. You need to solder the last 8 pin strip to the module. Pay attention to solder it upside down or in this case downside up as shown in the picture. When you plug it into the main PCB, the labels have to match. Pay attention to do everything right and **do not connect the LiPo battery before soldering**.
+## 20. Test
+
+Before the first test we need to prepare two more things.
+
+### Plug the SD card back in
+As you might remember, you removed the SD card from the Teensy before soldering the pins. Now it is time to put the card back in.
+
+### Connect display
+A Test without a display? Now way - you cannot see, if it is working ;)
+So use the display adapter cable from the display box and connect the white connector on the backside of the screen with the white plug from the cable. Then plug the wires according to their position on the display PCB (VCC, GND, DIN, CLK..) into the display connector on the main PCB.
+
+ToDo: Bild
+
+### Powering the system for the first time
+
+ToDo: USB connection
+
+### Test if everything is working
+
+
+## 21. Mount Display
+- remove screws from display
+- attach display spacer with screw
+- place Display
+- solder
+
+## 22. Power Supply
+
+To continue with this step, unplug the micro USB cable from Beatmaker's Sketchbook, first.
+
+### Preparing the teensy for battery power
+If you are not using the power management board and do not power your Beatmaker's sketchbook from a battery, you should skip this step.
+
+Otherwise you need to separate the two pads on the bottom side of your Teensy 4.1. The standard configuration is to use the Teensy with USB power. We will power the teensy from a battery. To not mix the GND from the USB and the battery (which will definitely harm the Teensy!), we need to decouple them by cutting the small trace with a cutter knife.
+
+![Cut pads](images/teensyPads.png)
+
+To make sure the trace is cut, you can use your multimeter and check if there is a connection or not. You can do this by using the continuity check, which beeps on most multimeters, if there is a connection between the two probes. Place one probe on each pad. If it beeps, there is still a connection. If it does not beep, we are done with this step.
+
+### Battery charger
+
+To give power to *Beatmaker's sketchbook* from a battery, we need to connect the battery charger module. It is a Power Boost 500 module from Adafruit. You need to solder the last 8 pin strip to the module. Pay attention to solder it upside down or in this case downside up as shown in the picture. When you plug it into the main PCB, the labels have to match. Pay attention to do everything right and **do not connect the LiPo battery before soldering**.
 
 ![Power management](images/power.png)
 
@@ -335,29 +367,6 @@ Now you can plug the battery in and if the blue LED is shining, there is some po
 
 ![Power management](images/powerMounted.png)
 
-Well done!
-
-## 21. Test
-
-Before the first test we need to prepare two more things.
-
-### Plug the SD card back in
-As you might remember, you removed the SD card from the Teensy before soldering the pins. Now it is time to put the card back in.
-
-### Connect display
-A Test without a display is not the whole thing. So use the display adapter cable from the display box and connect the white connector with the white plug from the cable. Then plug the wires according to their position on the display PCB (VCC, GND, DIN, CLK..) into the display connector on the main PCB.
-
-ToDo: Bild
-
-### Powering the system for the first time
-
-
-
-## 22. Mount Display
-- remove screws from display
-- attach display spacer with screw
-- place Display
-- solder
 
 ## 23. Connect Fader and Fader LED
 ### 1. Disassemble Display cable
