@@ -151,8 +151,15 @@ Now it's time to mount and solder the line jacks. It's straight forward.
 
 ## Interlude - The PCB Holder
 
-<p style="color:red"> ToDo: short description.. </p>
+To make it easy to place different parts at the right position for mounting *Beatmaker's sketchbook* inside the enclosure with the plexiglas pane, the kit contains four 3D printed **PCB holder**. The main PCB needs to be placed in the small slot in the middle. Depending on the side you place the board on your workbench, the components will align at the right distance from the Main PCB.
 
+![PCB Holder](images/pcbHolder.png)
+
+From the theoretical sketch to a real picture. The next picture shows the display, mounted at the right below the plexiglas pane, including the display spacer.
+
+In the upcoming sections the PCB holder is always mentioned. It is explained when and how to use it to make your soldering experience more fun.
+
+![Display distance](images/displayDistance.png)
 
 ## 8. Connectors and Pins
 
@@ -206,11 +213,17 @@ LEDs need to be placed in the right direction. The long leg is always connected 
 
 ![LED polarity](images/LEDpolarity.png)
 
-To position the LEDs right below the plexiglass cover for best visibility of the light, you should use the PCB holder. Solder one LED after the other. Start with one leg, then bend the LED in place and solder the second leg. Cut the remaining parts of the legs with a wire cutter after soldering.
+To position the LEDs right below the plexiglass cover for best visibility of the light, you should use the PCB holder.
+To get the best result, a good recommendation is to break this step into three parts. Start with the **red** LEDs at position **D1-D8**. Place them on the PCB and turn the PCB around. Pay attention the LEDs are touching the ground and then solder only one leg of each LED.
 
 ![LED](images/LED.png)
 
-Place the **red** LEDs on positions **D1-D8** and the **green** ones on **D9-D32**.
+When you are done, turn the PCB around and align the LEDs (with one not soldered leg this is pretty easy). They should all be in one line. The more precise you work, the better the result. Then turn the PCB around again and solder the second leg. When done, cut the remaining legs with a wire cutter.
+
+When the red LEDs are in place, continue with the **green** ones. You should start with LED **D9 - D18** first. Once again. One leg fist, align, solder, cut.
+Then continue with the remaining **green** LEDs **D19 - D32**.
+
+Done with this step? Congratulations! This was the most tedious task of this project and more than half of the project is already finished.
 
 ## 12. Front- & Power-switch PINs
 
@@ -224,7 +237,7 @@ Repeat the task with the angled, 2 PIN connector at the power switch position as
 
 ![Power PINs](images/powerPINs.png)
 
-When done, shorten the two power button pins with a jumper. If you bought a complete kit, the jumper is already attached to the pins. The jumper will be our temporary power switch. Removing the jumper will switch the device on. Putting it back on will turn it off.
+When done, shorten the two power button pins with a jumper. If you bought a complete kit, the jumper is already attached to the pins. The jumper will be our temporary power switch. Removing the jumper will switch the device on. Putting it back on will turn it off - when the battery is connected.
 
 ## 13. MIDI Sockets
 
@@ -284,8 +297,14 @@ Then mount the encoders and solder them to the PCB. Repeat this step for all fou
 
 ## 18. Mount ICs
 
-<p style="color:red"> Remember what they are used for? </p>
+You soldered five IC sockets. Currently there are no ICs on the board. This needs to be changed now. Placing the ICs into the holders is easy, but you need to pay attention not to bend the pins. If the pins of the ICs are a bit too wide spread and do not fit into the holder, place the IC on a table and slightly push all pins at one side to bend them into the right position.
 
+The orientation of the ICs is printed on the PCB. The sockets might cover the printed white outline of the IC a bit but it should be visible. The large ICs have a semicircle on one side. Place that side on the one printed on the PCB.
+The small eight pin IC has a small dot on one corner. Place this side directing to the semicircle on the PCB. As shown in the pictures.
+
+**ToDo: Bilder**
+
+Do you remember what the ICs are used for? If not, jump back to the socket section and read again, if you are interested ;)
 
 ## 19. Amplifier & Speakers
 
@@ -325,24 +344,56 @@ As you might remember, you removed the SD card from the Teensy before soldering 
 A Test without a display? Now way - you cannot see, if it is working ;)
 So use the display adapter cable from the display box and connect the white connector on the backside of the screen with the white plug from the cable. Then plug the wires according to their position on the display PCB (VCC, GND, DIN, CLK..) into the display connector on the main PCB.
 
-ToDo: Bild
+![Connecting the screen](images/screenPlug.png)
 
 ### Powering the system for the first time
 
-ToDo: USB connection
+Here comes the moment you have been waiting for.. drumroll.. powering up your Beatmaker's sketchbook for the first time to see if everything is working.
+
+If you bought a complete kit from sucofunk.com, the firmware is already installed on the Teensy. If not, you need to upload the firmware to the Teensy. Check [this guide]() on how to upload the firmware.
+
+Now take a micro USB cable and plug it into the Teensy Microcontroller on one side and to a USB power source (e.g. your PC). Watch the screen. If it lights up and you see the screen shown in the next picture, you made it!
+
+![Startup screen](images/startup.png)
+
+You do not see anything on the screen? Don't worry, unplug the micro USB cable and check out the troubleshooting guide.
+
+If you are happy and see *Beatmaker's sketchbook* starting up, follow the next steps to check if everything is working as expected.
 
 ### Test if everything is working
 
+ToDo: Testprogramm fertig schreiben und erklären.
+
 
 ## 21. Mount Display
-- remove screws from display
-- attach display spacer with screw
-- place Display
-- solder
+
+If everything is working, it's time to place the display to its final destination.
+
+First of all, the display comes out of the box with four screws and nuts. We do not need them. Just remove them with a screwdriver. You sould unplug the display connector cable at this point, too, as it might be a bit difficult to remove it, when the screen is soldered in place.
+
+### Display spacer
+
+To place the display at the right height to mount it right below the plexiglass cover of the enclosure, you need to place the display spacer below the display PCB. If you bought a complete kit, the spacer is in the package, otherwise you need to 3D print it first. Follow this [link] for the files.
+
+The spacer in the following images is printed in orange to have a good contrast for better visibility in the pictures. It might come in a different colour with the kits, as you will not see the spacer when the device is in use.
+
+Place the spacer aligned with the nut to the mounting hole on the PCB as shown in the left picture. Then take the second part of the spacer and connect both parts with the PCB in between, using the provided screw.
+
+![Display spacer](images/displaySpacer.png)
+
+Now place the display on the spacer and pay attention all pins from the display connector go through the display PCB.
+
+Before soldering the pins to the display PCB, it might be a good idea to use some tape to hold the display in position. As the screens are not always perfectly glued to the display PCB, you should place the display in a way that the white frame of the TFT screen is in parallel to the edges of the main PCB below it. Otherwise the screen might always look a bit displaced when using it.
+
+![Taped Display](images/displayTaped.png)
+
+If you think the screen is in the right position and cannot slip away, just solder the eight pins to the display PCB. You may not touch the screen itself or the orange/brown cable with the soldering iron. In general you should not take too much time when soldering, as the display is heat sensitive.
+
+If the display is soldered in place, test if it is still working. Just plug the micro USB cable back in. If the display is not working, check the solder joints. Heating them up again helps most of the time.
 
 ## 22. Power Supply
 
-To continue with this step, unplug the micro USB cable from Beatmaker's Sketchbook, first.
+To continue with this step, unplug the micro USB cable from Beatmaker's Sketchbook, if it is still connected.
 
 ### Preparing the teensy for battery power
 If you are not using the power management board and do not power your Beatmaker's sketchbook from a battery, you should skip this step.
@@ -367,14 +418,34 @@ Now you can plug the battery in and if the blue LED is shining, there is some po
 
 ![Power management](images/powerMounted.png)
 
+If you remove the jumper from the power switch pins, the device turns on without any USB power. Plugging in the USB cable will charge the battery from now on - of course there needs to be a power source connected to the other side of the USB cable ;)
 
-## 23. Connect Fader and Fader LED
-### 1. Disassemble Display cable
-### 2. Heat shrink tube
-### 3. Connect Female 5 Port Dupont housing
-### 4. Solder wires to fader
-### 5. Mount LED
-Do not mix GND and VCC,
-Isolate connectors
+## 23. Connect Fader, Fader LED and Power switch
+
+### Disassemble Display cable
+
+![Disassembled wires](images/kabelsalat.png)
+
+
+### Heat shrink tube
+
+Use lighter
 
 ## 24. Power Switch
+
+![Power switch](images/powerSwitch.png)
+
+
+### Connect Female 5 Port Dupont housing
+### Solder wires to fader
+
+![Fader connections](images/fader.png)
+
+### Mount fader LED
+Do not cut LED legs to the same length!
+
+Do not mix GND and VCC
+
+Isolate connectors
+
+![Fader LED](images/faderLED.png)
