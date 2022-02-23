@@ -17,7 +17,7 @@ Here is a picture of all the parts you should have received:
 
 If you are sourcing the parts by yourself, take a look at this BOM at Octopart: https://octopart.com/bom-tool/qJS5oQ3y
 
-Pay attention that the microphone, display and slide switch could not be found on Octopart. Links to the right products are added to the description field. Pay attention to the desciption column, as there are some comments on similar parts and so on.
+Pay attention that the microphone, display and slide switch could not be found on Octopart. Links to the right products are added to the description field. Pay attention to the description column, as there are some comments on similar parts and so on.
 
 You need to solder the two PSRAM modules to the Teensy 4.1 by yourself. Check [this page](https://www.pjrc.com/store/psram.html) from PJRC for instructions. If you bought a kit, the modules are already soldered to the Teensy and tested.
 
@@ -52,6 +52,7 @@ If you need information on how to use a multimeter, reading [this article](https
 ToDo:
 - zwei Bilder der Platine ohne Komponenten
 - zwei Bilder komplett bestückt
+- bei gutem Tageslicht Fotos machen!
 </p>
 ### Remove Tabs from PCB
 
@@ -155,30 +156,18 @@ To make it easy to place different parts at the right position for mounting *Bea
 
 ![PCB Holder](images/pcbHolder.png)
 
-From the theoretical sketch to a real picture. The next picture shows the display, mounted at the right below the plexiglas pane, including the display spacer.
-
 In the upcoming sections the PCB holder is always mentioned. It is explained when and how to use it to make your soldering experience more fun.
-
-![Display distance](images/displayDistance.png)
 
 ## 8. Connectors and Pins
 
-### Female connectors
+To connect the additional PCBs for audio input/output, power management, the brain a.k.a. Teensy 4.1, the amplifier to drive the speakers and the display, will be connected to the Beatmaker's sketchbook PCB via  connectors. The connectors need to be placed on the bottom side of the PCB and will be soldered on the top side.<br>
+Take the two female 50-connector strips and the two 50-pin male strips and cut each into nine parts:
 
-To connect the additional PCBs for audio input/output, power management, the brain a.k.a. Teensy 4.1 and the amplifier to drive the speakers, will be connected to the Beatmaker's sketchbook PCB via female connectors. The connectors need to be placed on the bottom side of the PCB and will be soldered on the top side.<br>
-Take the two 50 connector strips and cut them into eight parts:
+![Connectors](images/cutConnectors.png)
 
-![Connectors](images/connectors.png)
+3 single connectors each will remain. We do not need them for this project. You can build something funny with it or save them for another project. You should never throw spare parts away. ;)
 
-11 single connectors will remain. We do not need them for this project. You can build something funny with it or save them for another project. You should never throw spare parts away. ;)
-
-### Male connectors / Pins
-
-Now we cut the counterparts, the male connectors or often called *Pins*. Same procedure as before.  
-
-![Cut all pins](images/cutPins.png)
-
-We will solder the pins in a further chapter - not now. So put them aside and continue with soldering the female connectors, first.
+We will solder the pins in a later section - not now. So put them aside and continue with soldering the female connectors, first.
 
 ### Soldering
 
@@ -199,13 +188,17 @@ Mounting the microphone is an easy task. Just place the microphone in the right 
 
 ## 10. Screen PINs
 
-You reached one of the first hacks! Tear some cardboard from the display package off and place it on our workplace.<br>
-Use the long pins (see picture) and put them from the top side through the holes for the display connector. Turn The PCB upside down, use the PCB holder and make sure the pins are touching the cardboard. Solder the pins on the bottom side of the PCB.
+The screen will get connected in a slightly uncommon way and needs some attention. Take one 8 pin male connector strip and place it with the short legged side up through the main PCB from the top side.
 
-![PINs for display](images/screenPINs.png)
+![Screen PINs](images/screenPINs.png)
 
-**Why?**
-Because we do not want the pins to scratch the plexiglass cover when it is mounted. The cardboard is used as a little spacer.
+Now, let's remove the black plastic strip. There are different options to remove it. The one that always works - and is probably the most brutal one - is cutting it with the wire cutter, remove it pin by pin and straighten the pins again, as shown in the next pictures.
+
+![Screen PINs](images/screenPinMassa.png)
+
+**Why?** When the display is connected with female connectors and placed on these pins, the screen is placed right below the plexiglas pane.
+
+An **alternative option** would be to remove the plastic from the pins first, then place the pins into an eight pin female connector strip, place them and solder the male pins from the bottom side of the PCB.
 
 ## 11. LEDs
 
@@ -237,8 +230,6 @@ Repeat the task with the angled, 2 PIN connector at the power switch position as
 
 ![Power PINs](images/powerPINs.png)
 
-When done, shorten the two power button pins with a jumper. If you bought a complete kit, the jumper is already attached to the pins. The jumper will be our temporary power switch. Removing the jumper will switch the device on. Putting it back on will turn it off - when the battery is connected.
-
 ## 13. MIDI Sockets
 
 Mounting the MIDI connectors might be a bit difficult as they tend not to stay in place if you flip the PCB for soldering. It might be helpful to use some tape to hold them in place for soldering.
@@ -259,7 +250,8 @@ If you bought a kit from sucofunk.com, the SD card is already plugged in to the 
 
 ### Adding PSRAM
 
-You can skip this step, if you bought a complete kit from sucofunk.com. If you sourced the parts by yourself, now would be a good time to attach the memory. If the pins are already mounted, it is going to be a bit more difficult.
+You can skip this step, if you bought a complete kit from sucofunk.com. If you sourced the parts by yourself, now would be a good time to attach the memory. Check out this [tutorial](https://www.pjrc.com/store/psram.html) from PJRC on how to solder the PSRAM. Beatmaker's sketchbook needs two 8 MB modules.
+If the pins (next step) are already mounted, it is going to be a bit more difficult.
 
 ### Solder Pins
 
@@ -295,18 +287,27 @@ Then mount the encoders and solder them to the PCB. Repeat this step for all fou
 ![Encoder](images/encoder.png)
 
 
-## 18. Mount ICs
+## 18. Place ICs
 
 You soldered five IC sockets. Currently there are no ICs on the board. This needs to be changed now. Placing the ICs into the holders is easy, but you need to pay attention not to bend the pins. If the pins of the ICs are a bit too wide spread and do not fit into the holder, place the IC on a table and slightly push all pins at one side to bend them into the right position.
 
 The orientation of the ICs is printed on the PCB. The sockets might cover the printed white outline of the IC a bit but it should be visible. The large ICs have a semicircle on one side. Place that side on the one printed on the PCB.
 The small eight pin IC has a small dot on one corner. Place this side directing to the semicircle on the PCB. As shown in the pictures.
 
-**ToDo: Bilder**
+![IC directions](images/ICplacing.png)
 
 Do you remember what the ICs are used for? If not, jump back to the socket section and read again, if you are interested ;)
 
-## 19. Amplifier & Speakers
+## 19. Display
+
+To connect the display to Beatmaker's sketchbook you need to solder a eight socket female connector to the small display PCB as shown in the next image. You should hurry up when soldering the pins to the PCB as the display does not like too much heat.
+Do not forget to remove the two nuts besides the connector strip with a screwdriver.
+
+![Screen connector](images/screenConnector.png)
+
+If it is soldered properly, just plug the screen to the main PCB.
+
+## 20. Amplifier & Speakers
 
 During one of the the last steps we connected the audio board, which outputs the audio signals from the Teensy to the analog world. But hey, it is impossible to hear anything from that audio board without speakers. Ok, you already soldered the headphone- and line-out jacks some steps ago, but that is not enough.
 
@@ -333,18 +334,10 @@ If you soldered all four wires to the two speakers, connect the ends of the wire
 Well done! We are done with soldering for now and ready to power the system up and check if your Beatmaker's Sketchbook is working.
 
 
-## 20. Test
-
-Before the first test we need to prepare two more things.
+## 21. Test
 
 ### Plug the SD card back in
 As you might remember, you removed the SD card from the Teensy before soldering the pins. Now it is time to put the card back in.
-
-### Connect display
-A Test without a display? Now way - you cannot see, if it is working ;)
-So use the display adapter cable from the display box and connect the white connector on the backside of the screen with the white plug from the cable. Then plug the wires according to their position on the display PCB (VCC, GND, DIN, CLK..) into the display connector on the main PCB.
-
-![Connecting the screen](images/screenPlug.png)
 
 ### Powering the system for the first time
 
@@ -365,33 +358,60 @@ If you are happy and see *Beatmaker's sketchbook* starting up, follow the next s
 ToDo: Testprogramm fertig schreiben und erklären.
 
 
-## 21. Mount Display
 
-If everything is working, it's time to place the display to its final destination.
+## 22. Connect Fader, Fader LED and Power switch
 
-First of all, the display comes out of the box with four screws and nuts. We do not need them. Just remove them with a screwdriver. You sould unplug the display connector cable at this point, too, as it might be a bit difficult to remove it, when the screen is soldered in place.
+Now it's time for some up-cycling. As everything seems to be working, the display cable is not needed anymore. If you did not need it until now, be happy - it would be used for troubleshooting if the display is not working in the first run.
 
-### Display spacer
+We are re-using it for the power-switch and connecting the fader + LED to *Beatmaker's sketchbook*.
 
-To place the display at the right height to mount it right below the plexiglass cover of the enclosure, you need to place the display spacer below the display PCB. If you bought a complete kit, the spacer is in the package, otherwise you need to 3D print it first. Follow this [link] for the files.
+### Disassemble Display cable
 
-The spacer in the following images is printed in orange to have a good contrast for better visibility in the pictures. It might come in a different colour with the kits, as you will not see the spacer when the device is in use.
+Remove all connector housings of the cable, as shown in the picture. It is pretty easy, if you use a small screwdriver or a cutter knife and just lift the plastic that is holding the inside of the connectors up.
 
-Place the spacer aligned with the nut to the mounting hole on the PCB as shown in the left picture. Then take the second part of the spacer and connect both parts with the PCB in between, using the provided screw.
+![Disassembled wires](images/kabelsalat.png)
 
-![Display spacer](images/displaySpacer.png)
+### Heat shrink tube
 
-Now place the display on the spacer and pay attention all pins from the display connector go through the display PCB.
+The next steps use the supplied heat shrink tube to bundle and optically hide wires. The plexiglas pane is transparent and you might see the coloured wires if they are not wrapped in a black tube. ;)
 
-Before soldering the pins to the display PCB, it might be a good idea to use some tape to hold the display in position. As the screens are not always perfectly glued to the display PCB, you should place the display in a way that the white frame of the TFT screen is in parallel to the edges of the main PCB below it. Otherwise the screen might always look a bit displaced when using it.
+Using the heat shrink tube is straight forward. Cut it with the wire cutter or a cutter, slip it over the wires and heat it up with a lighter (or another source of hot air - ~200 °C). Watch it shrink and be happy.
 
-![Taped Display](images/displayTaped.png)
+## Power Switch
 
-If you think the screen is in the right position and cannot slip away, just solder the eight pins to the display PCB. You may not touch the screen itself or the orange/brown cable with the soldering iron. In general you should not take too much time when soldering, as the display is heat sensitive.
+Take two wires, plug the longer connectors into the two connector Dupont housing, strip some heat shrink tube over it and plug the smaller connectors to the power switch. Connect one wire to the middle pin of the power switch and the other one to another pin.
+The smaller connectors fit on to the power switch, but a bit solder helps to keep them in place. Then move the heat shrink tube and heat it up. The result should look as shown in the following picture.
 
-If the display is soldered in place, test if it is still working. Just plug the micro USB cable back in. If the display is not working, check the solder joints. Heating them up again helps most of the time.
+![Power switch](images/powerSwitch.png)
 
-## 22. Power Supply
+Connect the power switch to the pins you soldered a few steps ago.
+
+## Fader and LED
+
+The fader and its LED will be connected in the same way as we connected the power switch. Yes, the five wires plus connectors fit through the heat shrink tube! ;)
+
+The result should look like this:
+
+![Fader connections](images/fader.png)
+
+Connect **VALUE** to **1'** (upper left) on the fader, **VCC** to **2'** (right below 1') and **GND** to **3'**.
+
+A bit solder will help to keep everything in place.
+
+### Mount fader LED
+
+![Fader LED](images/faderLED.png)
+
+The legs of the LED need to be shortened. Do not cut them at the same length. Keep the difference between + and - to connect it right. **Long leg** to **LED+** and **short leg** to **LED-**.
+
+Before soldering the LED to the cable, test if it is connected in the right way by using the test-tool from above again. Do not forget to plug the five pin connector to the front connectors of the main PCB. Pay attention to plug it in in the right orientation!
+
+The legs of the LED may not touch each other to prevent a short circuit.
+
+If everything is correct, use some solder and do not forget to apply the heat-shrink tube to isolate the legs.
+
+
+## 23. Power Supply
 
 To continue with this step, unplug the micro USB cable from Beatmaker's Sketchbook, if it is still connected.
 
@@ -412,40 +432,16 @@ To give power to *Beatmaker's sketchbook* from a battery, we need to connect the
 
 There is a USB jack in the *Power Boost 500 bag*. We do not need that plug for *Beatmaker's sketchbook*. Do not solder it and keep it with the spare pins and connectors. ;)
 
-Check, if the jumper is still connecting the power switch pins! If not, fix it, because in this case the connected pins are the same as a power switch. In our case connected means off and no connection (jumper removed) is on.
-
 Now you can plug the battery in and if the blue LED is shining, there is some power in the battery and we are ready to go. Plug the Power Boost to the main PCB.
 
 ![Power management](images/powerMounted.png)
 
-If you remove the jumper from the power switch pins, the device turns on without any USB power. Plugging in the USB cable will charge the battery from now on - of course there needs to be a power source connected to the other side of the USB cable ;)
+Now you can use the power switch to turn Beatmaker's sketchbook on/off.
 
-## 23. Connect Fader, Fader LED and Power switch
+Plugging in the USB cable will charge the battery from now on - of course there needs to be a power source connected to the other side of the USB cable ;)
 
-### Disassemble Display cable
+## 24. Congratulations!
 
-![Disassembled wires](images/kabelsalat.png)
+You made it!
 
-
-### Heat shrink tube
-
-Use lighter
-
-## 24. Power Switch
-
-![Power switch](images/powerSwitch.png)
-
-
-### Connect Female 5 Port Dupont housing
-### Solder wires to fader
-
-![Fader connections](images/fader.png)
-
-### Mount fader LED
-Do not cut LED legs to the same length!
-
-Do not mix GND and VCC
-
-Isolate connectors
-
-![Fader LED](images/faderLED.png)
+If you already have an enclosure at hand, bring them together ;)
