@@ -13,6 +13,7 @@ Here is a picture of all the parts you should have received:
 
 ![All components on a plate](images/components.png)
 
+
 ### Sourcing parts
 
 If you are sourcing the parts by yourself, take a look at this BOM at Octopart: https://octopart.com/bom-tool/qJS5oQ3y
@@ -20,6 +21,20 @@ If you are sourcing the parts by yourself, take a look at this BOM at Octopart: 
 Pay attention that the microphone, display and slide switch could not be found on Octopart. Links to the right products are added to the description field. Pay attention to the description column, as there are some comments on similar parts and so on.
 
 You need to solder the two PSRAM modules to the Teensy 4.1 by yourself. Check [this page](https://www.pjrc.com/store/psram.html) from PJRC for instructions. If you bought a kit, the modules are already soldered to the Teensy and tested.
+
+
+### This is what the result will look like
+
+By the end of this guide your project will look like this:
+
+![Completed project](images/complete.png)
+
+For reference, check these links to the higher resolution versions of the pictures:
+
+- [Top](images/completeTopBig.png)
+- [Bottom](images/completeBottomBig.png)
+
+
 
 ## 1. Preparation
 
@@ -47,13 +62,12 @@ In case you mess something up, you should be familiar with desoldering, too. Ano
 
 If you need information on how to use a multimeter, reading [this article](https://learn.sparkfun.com/tutorials/how-to-use-a-multimeter/all) is a good starting point.
 
-### This is what the result will look like
-<p style="color:red">
-ToDo:
-- zwei Bilder der Platine ohne Komponenten
-- zwei Bilder komplett bestückt
-- bei gutem Tageslicht Fotos machen!
-</p>
+### Printed circuit board (PCB)
+
+During this guide the sides of the main PCB are often mentioned. Here is the definition of top and bottom side:
+
+![Main PCB](images/PCBs.png)
+
 ### Remove Tabs from PCB
 
 There are some tabs around the PCB which hold the Board in place while manufacturing. Most of the time, these tabs are not removed properly. You should remove them, otherwise the board might not fit 100% into the case and you might cut your fingers.
