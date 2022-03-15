@@ -369,9 +369,17 @@ If you are happy and see *Beatmaker's sketchbook* starting up, follow the next s
 
 ### Test if everything is working
 
-ToDo: Testprogramm fertig schreiben und erklären.
+There is a small test program within beatmaker's sketchbook firmware. To run it, you need to push the key combination *&lt;funk&gt;* + *&lt;switch&gt;* (SW5 + SW8) at the record collection after the loading screen.
 
+Watch this video on how to check if the buttons, LEDs, encoders and fader are working:
 
+https://www.youtube.com/watch?v=f6vcWZaS9UY
+
+If you are testing everything at this point, you just connect the USB cable to the Teensy microcontroller and it will power on as soon as there is power coming in - no power switch needed.
+
+If a certain button or LED is not working, there is probably a connection not soldered or has a cold solder joint. To find out where it is connected, check out the schematics. Each button, LED (not the fader LED) and encoder is connected to one of the MCP-23017 ICs. 
+
+If a whole IC seems to be not connected, check its orientation in the socket and all connections of that IC. If the LEDs of an MCP-23017 are working, but nothing happens, when you push a button, then the interrupt pin to the teensy (pins 28-32 -> MCP1 - MCP5) is probably not properly connected.
 
 ## 22. Connect Fader, Fader LED and Power switch
 
