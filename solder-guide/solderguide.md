@@ -16,7 +16,7 @@ Here is a picture of all the parts you should have received:
 
 ### Sourcing parts
 
-If you are sourcing the parts by yourself, take a look at this BOM at Octopart: https://octopart.com/bom-tool/qJS5oQ3y
+If you are sourcing the parts by yourself, take a look at this BOM at Octopart: https://octopart.com/bom-tool/y1OCCSyb
 
 Pay attention that the microphone, display and slide switch could not be found on Octopart. Links to the right products are added to the description field. Pay attention to the description column, as there are some comments on similar parts and so on.
 
@@ -377,7 +377,7 @@ https://www.youtube.com/watch?v=f6vcWZaS9UY
 
 If you are testing everything at this point, you just connect the USB cable to the Teensy microcontroller and it will power on as soon as there is power coming in - no power switch needed.
 
-If a certain button or LED is not working, there is probably a connection not soldered or has a cold solder joint. To find out where it is connected, check out the schematics. Each button, LED (not the fader LED) and encoder is connected to one of the MCP-23017 ICs. 
+If a certain button or LED is not working, there is probably a connection not soldered or has a cold solder joint. To find out where it is connected, check out the schematics. Each button, LED (not the fader LED) and encoder is connected to one of the MCP-23017 ICs.
 
 If a whole IC seems to be not connected, check its orientation in the socket and all connections of that IC. If the LEDs of an MCP-23017 are working, but nothing happens, when you push a button, then the interrupt pin to the teensy (pins 28-32 -> MCP1 - MCP5) is probably not properly connected.
 
