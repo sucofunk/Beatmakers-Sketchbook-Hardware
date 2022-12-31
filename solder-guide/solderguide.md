@@ -1,5 +1,9 @@
 # Soldering Instructions for *Beatmaker's Sketchbook DIY v1*
 
+
+*ATTENTION:* This guide is still valid, but a few steps changed to make the build process more easy. This guide will be updated soon.
+
+
 Welcome to the soldering instructions for the *Beatmaker's Sketchbook DIY v1* and thank you for purchasing a kit from sucofunk.
 
 Soldering all the components to the PCB and bringing *Beatmaker's Sketchbook* to life will take about 3-6 hours, depending on your skills. <br>
